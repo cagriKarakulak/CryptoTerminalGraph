@@ -1,0 +1,5 @@
+{
+    "symbol": "BTC/USDT",
+    "mode": "ohlcv",  
+    "timeframe": "1m" 
+}
