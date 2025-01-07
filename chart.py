@@ -154,7 +154,7 @@ def main():
                 next_candle_time = (current_time + timedelta(minutes=1)).replace(second=0, microsecond=0)
                 time_remaining = (next_candle_time - current_time).seconds
                 draw_candlestick_graph(ohlcv_data, symbol, timeframe, time_remaining)
-        print(f"Time remaining: {time_remaining} seconds")
+                print(f"Time remaining: {time_remaining} seconds")
         print("Delay:", round(time.time() - donguBaslangici, 2), "seconds")
 
 if __name__ == "__main__":
