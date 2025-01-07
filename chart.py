@@ -3,7 +3,7 @@ import time
 import os
 import shutil
 import json
-from datetime import datetime
+from datetime import datetime, timedelta
 from art import text2art
 
 exchange = ccxt.binance()
@@ -74,14 +74,14 @@ def draw_realtime_graph(prices, timestamps, symbol):
         print(line)
     print("+" + "-" * border_width + "+\033[0m")  # Bottom border with color
 
-def draw_candlestick_graph(ohlcv_data, symbol, timeframe):
+def draw_candlestick_graph(ohlcv_data, symbol, timeframe, time_remaining):
     max_price = max([candle[2] for candle in ohlcv_data])  # High prices
     min_price = min([candle[3] for candle in ohlcv_data])  # Low prices
     range_price = max_price - min_price
 
     # Get terminal size
     terminal_size = shutil.get_terminal_size((80, 20))
-    graph_height = terminal_size.lines - 10  # Adjust for borders, labels, and title
+    graph_height = terminal_size.lines - 12  # Adjust for borders, labels, title, and time remaining
     graph_width = max(int(terminal_size.columns * 0.7), 1)  # Use at least 70% of the terminal width
     border_width = terminal_size.columns - 2  # Full width for the border
 
@@ -150,7 +150,11 @@ def main():
         elif mode == 'ohlcv':
             ohlcv_data = fetch_ohlcv_data(symbol, timeframe, limit)
             if ohlcv_data is not None:
-                draw_candlestick_graph(ohlcv_data, symbol, timeframe)
+                current_time = datetime.now()
+                next_candle_time = (current_time + timedelta(minutes=1)).replace(second=0, microsecond=0)
+                time_remaining = (next_candle_time - current_time).seconds
+                draw_candlestick_graph(ohlcv_data, symbol, timeframe, time_remaining)
+        print(f"Time remaining: {time_remaining} seconds")
         print("Delay:", round(time.time() - donguBaslangici, 2), "seconds")
 
 if __name__ == "__main__":
