@@ -49,20 +49,10 @@ The configuration is managed through the `config.json` file. Here is an example 
 Run the main script to start the program:
 
 ```sh
-python strategy.py
+python chart.py
 ```
 
 The program will read the configuration from `config.json` and display the graph accordingly.
-
-## Example
-
-### Real-Time Price Graph
-
-![Real-Time Price Graph](images/realtime.png)
-
-### OHLCV Candlestick Chart
-
-![OHLCV Candlestick Chart](images/ohlcv.png)
 
 ## License
 
