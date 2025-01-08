@@ -20,8 +20,8 @@ This project fetches and displays real-time and OHLCV (Open, High, Low, Close, V
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/crypto-graph-plotter.git
-    cd crypto-graph-plotter
+    git clone https://github.com/cagriKarakulak/CryptoTerminalGraph.git
+    cd CryptoTerminalGraph
     ```
 
 2. Install the required libraries:
