@@ -26,7 +26,7 @@ This project fetches and displays real-time and OHLCV (Open, High, Low, Close, V
 
 2. Install the required libraries:
     ```sh
-    pip install ccxt art
+    pip install -r requirements.txt
     ```
 
 ## Configuration
