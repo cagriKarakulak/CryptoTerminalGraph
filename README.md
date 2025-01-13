@@ -1,5 +1,5 @@
 # CryptoTerminalGraph
-![screenshot](https://github.com/user-attachments/assets/d8c44e11-81c3-4644-bf8f-30f1c39851e1)
+![Untitled](https://github.com/user-attachments/assets/6a551850-351f-4b2b-b77f-dd1395379e66)
 
 This project fetches and displays real-time and OHLCV (Open, High, Low, Close, Volume) data for a specified cryptocurrency pair using the Binance exchange. The data is visualized in the terminal as either a real-time price graph or a candlestick chart, depending on the configuration.
 
